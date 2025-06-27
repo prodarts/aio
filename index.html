@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>来店導線デザイナー｜Google・SNS連携で集客を最大化</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- ファビコン -->
+    <link rel="icon" type="image/jpeg" href="img/favicon.jpg">
+
+    <!-- 必須メタタグ -->
+    <meta name="description" content="GoogleビジネスプロフィールとSNS（LINE, Instagram, Xなど）を連携し、「行きたくなる導線」を設計する来店導線デザイナー。初期費用0円で、集客の課題を解決し、店舗の売上アップをサポートします。">
+    <meta name="keywords" content="来店導線, マーケットサポート, Googleビジネスプロフィール, SNS運用, 店舗集客, 初期費用0円, 来店デザイナー">
+
+    <!-- OGP (Open Graph Protocol) / Facebook / LINE など -->
+    <meta property="og:title" content="来店導線デザイナー｜Google・SNS連携で集客を最大化">
+    <meta property="og:description" content="店舗集客でお悩みの方へ。GoogleとSNSをシームレスにつなぎ、顧客の「来店」を加速させる導線設計をサポート。初期費用0円から始められます。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/lp-page/"> <!-- ★公開URLに置き換えてください★ -->
+    <meta property="og:image" content="https://yourdomain.com/img/aio_ogp.jpg"> <!-- ★公開URLに置き換えてください★ -->
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="来店導線デザイナー サービスイメージ">
+    <meta property="og:site_name" content="来店導線デザイナー">
+
+    <!-- Twitterカード -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="来店導線デザイナー｜Google・SNS連携で集客を最大化">
+    <meta name="twitter:description" content="店舗集客の新しい形。GoogleとSNSを連携し「行きたくなる導線」を設計。初期費用0円であなたの店舗に最適化された集客支援を開始。">
+    <meta name="twitter:image" content="https://yourdomain.com/img/aio_ogp.jpg"> <!-- ★公開URLに置き換えてください★ -->
+    <meta name="twitter:image:alt" content="来店導線デザイナー サービスイメージ">
+    <meta name="twitter:creator" content="@rental_staff"> <!-- Twitterアカウントがあれば追加 -->
+    <meta name="twitter:site" content="@rental_staff"> <!-- Twitterアカウントがあれば追加 -->
+
+    <!-- JSON-LD Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "デジタルマーケティングサービス",
+      "name": "来店導線設計マーケットサポート",
+      "description": "Googleビジネスプロフィール、LINE、Instagram、X（旧Twitter）、ホームページなど全てのオンライン媒体を連携させ、店舗への「行きたくなる導線」を最適化する集客サポートサービスです。初期費用0円から店舗の集客課題を解決します。",
+      "provider": {
+        "@type": "Organization",
+        "name": "来店導線デザイナー",
+        "url": "https://yourdomain.com/lp-page/", <!-- ★公開URLに置き換えてください★ -->
+        "logo": "https://yourdomain.com/img/logo.png", <!-- ★もしロゴ画像があればパスを指定（任意）★ -->
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "LINEまたはSNSのDMでお問い合わせください",
+          "contactType": "customer service"
+        }
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "日本全国"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "JPY",
+        "price": "0",
+        "description": "初期費用"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "料金プラン",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "6ヶ月プラン"
+            },
+            "priceCurrency": "JPY",
+            "price": "33000",
+            "priceType": "Monthly",
+            "areaServed": "日本全国"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "1年間プラン"
+            },
+            "priceCurrency": "JPY",
+            "price": "30000",
+            "priceType": "Monthly",
+            "areaServed": "日本全国"
+          }
+        ]
+      }
+    }
+    </script>
+    <!-- ▼▼▼ FAQPageスキーマの追加 ▼▼▼ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "来店導線デザイナーって何をしてくれるの？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "「お客様が来たくなる仕組み」を作る専門家です。来店までのハードルを下げて、新規のお客様を集める導線や仕組みを丸ごと設計し、サポートします。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "どんな悩みを相談できる？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "「もっとお客様を呼びたい」「SNSやGoogleから来店につなげたい」「店の入り口が目立たない…」など、集客・導線・レイアウト・予約・キャンペーンまで幅広くご相談ください！"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "普通のコンサルと何が違うの？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "居酒屋の現場で、お客様の「行きたい！」をつくる導線をSNSやGoogleで実践してきたからこそ、数字だけじゃなく“お客様の心が動く瞬間”を大切に提案します。Googleビジネスプロフィールや口コミ対策も得意です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Google対策って何をしてくれるの？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Googleビジネスプロフィールの最適化、投稿や写真・口コミ対策、マップ上で目立つ工夫など、お店の魅力がしっかり伝わり「見つけてもらえる」「選ばれる」仕組みづくりをサポートします。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "どんなお店でも頼める？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい！カフェ・美容室・整体・小さなお店から大型店舗まで、業種も規模も問わずOKです。何でも一度ご相談ください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "どんな流れで進むの？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "まずヒアリングや現地チェック→課題発見→「今できること」から一緒に改善→実施サポート→効果の振り返り。GoogleやSNSも含めて気軽なやりとりで進めます！"
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- ▲▲▲ FAQPageスキーマの追加ここまで ▲▲▲ -->
+</head>
+<body>
+
+    <!-- 1. ファーストビュー -->
+    <header class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>来店導線デザイナー</h1>
+                <p>GoogleとSNSとお店をつないで<br>「行きたくなる導線」を整える<br>来店導線のマーケットサポート</p>
+            </div>
+            <div class="hero-price">
+                <p class="hero-price-label">初期費用</p>
+                <p class="hero-price-number">
+                    <span>0</span>円
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. 問題提起 -->
+        <section class="problem">
+            <div class="container">
+                <h2>私たちのゴールは<br>お客様に“来店”して<br>いただくことです。</h2>
+                <p class="center-text">
+                    どれだけ話題になっても、いいねが増えても、<br>最終的に“来店”につながらなければ意味がありませんよね？</p><br>
+                <h2>その電車、本当にお客様を<br>“来店”まで運んでいますか？</h2>
+                <div class="problem-content">
+                    <div class="problem-text">
+                        <ul>
+                            <li>『Google』</li>
+                            <li>『LINE』</li>
+                            <li>『Instagram』</li>
+                            <li>『SNS』</li>
+                            <li>『ホームページ』</li>
+                        </ul>
+                        <div class="speech-bubble-group">
+                            <p class="speech-bubble yellow">LINEもクーポンを<br>発行するだけで終わっていませんか？</p>
+                            <p class="speech-bubble green">SNSをただ投稿して<br>終わりにしてませんか？</p>
+                        </div>
+                        <p class="problem-summary">
+                            <br>それぞれがパワフルな電車 (媒体) でも、<br>
+                            別々の線路でバラバラに走っている限り、<br>
+                            お客様を「来店」というゴールへ真っすぐ運ぶことは難しいですよね。
+                        </p>
+                    </div>
+                    <div class="problem-image">
+                        <p class="image-title">電車に例えると…</p>
+                        <img src="img/img_0.webp" alt="Google, SNS, Instagram, LINEの電車がバラバラの線路を走っているイラスト">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 解決策 -->
+        <section class="solution">
+            <div class="solution-header">
+                <h2>全媒体をつなげて<br>“最短ルート”でお客様を来店へ</h2>
+            </div>
+            <div class="container solution-content">
+                <div class="solution-image">
+                    <img src="img/img_1.webp" alt="LINE, SNS, Instagram, Googleのロゴが入った新幹線">
+                </div>
+                <div class="solution-text">
+                    <p class="solution-main-copy">
+                        大切なのは<br>すべてをつなげること
+                    </p>
+                    <p>
+                        各媒体を連動させて、離脱させない！<br>
+                        そして、しっかり“来店”へと導く<br>
+                        導線設計が集客のカギです。
+                    </p>
+                    <p class="solution-conclusion">そのための<br>動線設計です！</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4 & 5. サービス内容 -->
+        <section class="services">
+            <div class="container">
+                <h2>サービス内容</h2>
+
+                <div class="service-category">
+                    <h3>Google関係の運用サポート</h3>
+                    <ul>
+                        <li>各店舗に適したローカルキーワードの調査・設計</li>
+                        <li>Googleビジネスプロフィールの初期設定と最適化 </li>
+                        <li>週2~3回の投稿 (<span>AI検索に拾われやすい文脈設計</span>)<span class="important">重要！</span></li>
+                        <li>口コミ返信対応 (星の数ごとに最適なテンプレ設計/SEO・AIO対応)</li>
+                    </ul>
+                </div>
+
+                <div class="service-category">
+                    <h3>SNS初期設計+運用サポート</h3>
+                    <ul>
+                        <li>Instagramアカウントの初期設定 (プロフィール文・リンク導線整備)</li>
+                        <li>Instagram投稿アドバイス付き (簡易運用マニュアル+投稿添削可)</li>
+                    </ul>
+                </div>
+
+                <div class="service-category">
+                    <h3>追加マーケットサポート</h3>
+                    <ul>
+                        <li>トリップアドバイザーへのインバウンド用初期設定</li>
+                        <li>ダーツライブショップページのなどの業界独自サイトの最適化（ご相談ください）</li>
+                    </ul>
+                </div>
+
+                <div class="service-category">
+                    <h3>おまけ</h3>
+                    <ul>
+                        <li>4,300人以上の生のフォロワーに抱えるアカウントで店舗の運用方法を引用投稿！<br><br>
+                        リンク付きで投稿するので店舗の露出も増え各サイトへの流入が増えます。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6 & 7. 料金プラン -->
+        <section class="pricing">
+            <div class="container">
+                <div class="pricing-period">
+                    <p class="pricing-period-title">契約期間</p>
+                    <p class="pricing-period-options"><span>6</span>ヶ月 or <span>1</span>年</p>
+                </div>
+
+                <h2>1店舗あたり<br>月々のサービス料金</h2>
+                <p class="initial-fee">初期費用</p>
+                
+                <div class="plan-cards">
+                    <div class="plan-card">
+                       
+                        <div class="plan-details">
+                            <h3>6ヶ月プラン</h3>
+                            <p class="price">33,000<span>円 / 税込</span></p>
+                        </div>
+                    </div>
+                    <div class="plan-card">
+                       
+                        <div class="plan-details">
+                            <h3>1年間プラン</h3>
+                            <p class="price">30,000<span>円 / 税込</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pricing-notes">
+                    <p class="note-red">複数店舗でのご契約をご検討いただける場合は、全体のご負担を抑えられるよう契約条件について柔軟に調整させていただきます。</p>
+                    <p>すべての施策は『来店までの導線』を整理しAIにも拾われやすい状態をつくり来店につなげることをゴールにしています。</p>
+                    <p>今回ご紹介した以外にも状況に応じてお手伝いできることがまだありますので、お気軽にご相談ください。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ▼▼▼ FAQセクションの追加 ▼▼▼ -->
+        <section id="faq">
+            <div class="container">
+                <h2>よくある質問</h2>
+                <dl class="faq-list">
+                    <dt>Q1: 来店導線デザイナーって何をしてくれるの？</dt>
+                    <dd>A1: 「お客様が来たくなる仕組み」を作る専門家です。来店までのハードルを下げて、新規のお客様を集める導線や仕組みを丸ごと設計し、サポートします。</dd>
+
+                    <dt>Q2: どんな悩みを相談できる？</dt>
+                    <dd>A2: 「もっとお客様を呼びたい」「SNSやGoogleから来店につなげたい」「店の入り口が目立たない…」など、集客・導線・レイアウト・予約・キャンペーンまで幅広くご相談ください！</dd>
+
+                    <dt>Q3: 普通のコンサルと何が違うの？</dt>
+                    <dd>A3: 居酒屋の現場で、お客様の「行きたい！」をつくる導線をSNSやGoogleで実践してきたからこそ、数字だけじゃなく“お客様の心が動く瞬間”を大切に提案します。Googleビジネスプロフィールや口コミ対策も得意です。</dd>
+
+                    <dt>Q4: Google対策って何をしてくれるの？</dt>
+                    <dd>A4: Googleビジネスプロフィールの最適化、投稿や写真・口コミ対策、マップ上で目立つ工夫など、お店の魅力がしっかり伝わり「見つけてもらえる」「選ばれる」仕組みづくりをサポートします。</dd>
+
+                    <dt>Q5: どんなお店でも頼める？</dt>
+                    <dd>A5: はい！カフェ・美容室・整体・小さなお店から大型店舗まで、業種も規模も問わずOKです。何でも一度ご相談ください。</dd>
+
+                    <dt>Q6: どんな流れで進むの？</dt>
+                    <dd>A6: まずヒアリングや現地チェック→課題発見→「今できること」から一緒に改善→実施サポート→効果の振り返り。GoogleやSNSも含めて気軽なやりとりで進めます！</dd>
+                </dl>
+            </div>
+        </section>
+        <!-- ▲▲▲ FAQセクションの追加ここまで ▲▲▲ -->
+
+        <!-- 8. クロージング/CTA -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-box">
+                    <p>Googleだけ！ SNSだけ！ ではなく<br>
+                    GoogleとSNSやLINE、ホームページなどを組み合わせて活用し<br>
+                    <span>「来店につながる仕組みづくり」</span>をつくります！</p>
+                </div>
+                <div class="cta-message">
+                    <p class="cta-message-text">この流れに乗らないのは、もったいないかもしれません。<br>
+                    すでに取り組んでいるお店は、先に大きな成果を掴んでいます。</p>
+                    <p class="cta-message-text">「まずは話を聞いてみるだけ」でも構いません。<br>
+                    今すぐご連絡いただくことで、最新事例や無料診断をご案内できます。</p>
+                </div>
+                
+                <div class="profile-contact-card">
+                    <h3 class="profile-title">少しでも気になったら</h3>
+                    <div class="profile-info">
+                        <p>元ダーツの日本代表</p>
+                        <p>名前：石田 博生 Ishida Hiroo<br>あだ名：POPO</p>
+                    </div>
+                    <p class="profile-cta-text">
+                        🔻 今すぐお問い合わせください 🔻
+                        
+                    </p>
+                
+                    <div class="profile-icons-grid">
+                        <!-- 飲食アカウント -->
+                        <a href="https://x.com/rental_staff" target="_blank" rel="noopener noreferrer" class="profile-icon-link">
+                            <img src="img/X_icon.png" class="social-icon" alt="X 飲食アカウント">
+                            <p class="icon-label">広告ゼロで来たくなるお店をつくる人</p>
+                        </a>
+                
+                        <!-- ダーツアカウント -->
+                        <a href="https://x.com/popodayoo" target="_blank" rel="noopener noreferrer" class="profile-icon-link">
+                            <img src="img/X_icon.png" class="social-icon" alt="X ダーツアカウント">
+                            <p class="icon-label">本人個人のメインアカウント</p>
+                        </a>
+                
+                        <!-- LINE -->
+                        <a href="https://line.me/R/ti/p/@039eyrjw" target="_blank" rel="noopener noreferrer" class="profile-icon-link">
+                            <img src="img/LINE_icon.png" class="social-icon" alt="LINE">
+                            <p class="icon-label">公式LINE</p>
+                        </a>
+                
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/popodayo/reels/" target="_blank" rel="noopener noreferrer" class="profile-icon-link">
+                            <img src="img/Instagram_icon.png" class="social-icon" alt="Instagram">
+                            <p class="icon-label">Instagramは<br>DMから！</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 来店導線デザイナー. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
