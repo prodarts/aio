@@ -2,480 +2,444 @@
  * =========================================================
  *  来店導線デザイナーLP - 0円表示を画像に合わせた最終版 + FAQ追加
  * =========================================================
- *
- * このCSSファイルは、シンプルで洗練されたLPデザインを構築するためのスタイルを定義しています。
- * カラーパレット、フォント設定、各セクションのレイアウト、レスポンシブデザインなど、
- * 全ての要素について詳細なコメントを付与しています。
- *
- * [基本ガイドライン]
- * - `rem`単位: ルート要素 (html) のフォントサイズに基づいた相対単位。レスポンシブデザインに適しています。
- *              デフォルトは1rem = 16pxですが、bodyやhtmlで変更可能です。
- * - `var(--変数名)`: CSSカスタムプロパティ（変数）。色や影、角丸などの共通値を管理し、
- *                    一括で変更できるようにしています。
- * - `box-shadow`: 要素に影をつけ、立体感を演出します。
- * - `border-radius`: 要素の角を丸くします。
- * - `transition`: ホバーなどの状態変化に滑らかなアニメーションを適用します。
- * - `@media (max-width: 768px)`: 画面幅が768px以下のデバイス（主にスマートフォン）
- *                                 に適用されるスタイルを定義します。
- *                                 このブロック内の値を調整することで、スマホ表示を最適化できます。
- *
- * 各プロパティの値は、プロジェクトの要件や好みに合わせて自由に調整してください。
  */
 
 /* === 1. 基本設定とカラーパレット === */
-
-/* Google Fontsからのフォントインポート: Noto Sans JP を使用 */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
 
-/* CSSカスタムプロパティ（変数）の定義 */
 :root {
-  --font-family: 'Noto Sans JP', sans-serif; /* 全体の基本フォント */
-  --color-text: #2c3e50; /* テキストの基本色（濃いスレートグレー、高い視認性） */
-  --color-text-light: #6a7c8d; /* 補助的なテキスト色（少し明るめのグレー、背景とのコントラスト確保） */
-  --color-primary: #3D52D5; /* メインブランドカラー（深みのあるインディゴブルー） */
-  --color-accent: #FFC107; /* アクセントカラー（鮮やかなアンバー/ゴールド、強調したい部分に） */
-  --color-bg: #FFFFFF; /* 基本的な背景色（白） */
-  --color-bg-alt: #F6F9FC; /* 交互のセクション背景色（非常に薄い洗練されたグレーブルー） */
-  --color-border: #E0E6EE; /* ボーダー色（少し青みがかった薄いグレー） */
-  --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.04); /* 軽い影 */
-  --shadow-medium: 0 8px 30px rgba(61, 82, 213, 0.08); /* 中程度の影（プライマリカラーに連動） */
-  --shadow-heavy: 0 15px 40px rgba(61, 82, 213, 0.15); /* 重い影（強調したい要素に） */
-  --border-radius: 16px; /* 要素の角の丸み */
+  --font-family: 'Noto Sans JP', sans-serif;
+  --color-text: #2c3e50;
+  --color-text-light: #6a7c8d;
+  --color-primary: #3D52D5;
+  --color-accent: #FFC107;
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #F6F9FC;
+  --color-border: #E0E6EE;
+  --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.04);
+  --shadow-medium: 0 8px 30px rgba(61, 82, 213, 0.08);
+  --shadow-heavy: 0 15px 40px rgba(61, 82, 213, 0.15);
+  --border-radius: 16px;
 }
 
-/* HTML要素の基本設定 */
 html {
-  scroll-behavior: smooth; /* スクロールを滑らかにする */
+  scroll-behavior: smooth;
 }
 
 body {
-  margin: 0; /* body要素のデフォルトマージンをリセット */
-  font-family: var(--font-family); /* 基本フォントの適用 */
-  font-weight: 400; /* 基本フォントの太さ */
-  color: var(--color-text); /* 基本テキスト色の適用 */
-  background-color: var(--color-bg); /* 基本背景色の適用 */
-  line-height: 1.8; /* 行の高さ（テキストの読みやすさに影響） */
-  -webkit-font-smoothing: antialiased; /* WebKit系ブラウザでのフォント描画を滑らかにする */
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 400;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* コンテンツの最大幅と中央寄せ */
 .container {
-  max-width: 960px; /* コンテンツエリアの最大幅を960pxに制限 */
-  margin: 0 auto; /* 左右マージンをautoにして中央寄せ */
-  padding: 0 24px; /* 左右に24pxのパディング（コンテンツが端に寄りすぎないように） */
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-/* 全てのセクションの上下パディング */
 section {
-  padding: 100px 0; /* 各セクションの上下に100pxの余白 */
+  padding: 100px 0;
 }
 
-/* 偶数番目のセクションの背景色を変更し、視覚的な区切りを作る */
 section:nth-of-type(odd) {
-  background-color: var(--color-bg); /* 白背景 */
+  background-color: var(--color-bg);
 }
 section:nth-of-type(even) {
-  background-color: var(--color-bg-alt); /* 薄いグレーブルー背景 */
+  background-color: var(--color-bg-alt);
 }
 
-/* 見出しの基本スタイル */
 h1, h2, h3 {
-  font-weight: 700; /* 見出しのフォントの太さ */
-  line-height: 1.5; /* 見出しの行の高さ */
-  color: var(--color-text); /* 全ての見出しを濃いテキスト色に（視認性確保） */
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--color-text);
 }
 
-/* h1のフォントサイズ */
 h1 { font-size: 2.8rem; }
 
-/* h2のフォントサイズ、中央寄せ、下線付きスタイル */
 h2 {
-  font-size: 3.2rem; /* h2のフォントサイズ（PC版）。これを変更するとh2の大きさが変わります。 */
-  text-align: center; /* h2を中央寄せ */
-  margin-bottom: 60px; /* 下に60pxの余白 */
-  position: relative; /* ::after擬似要素の基準位置 */
-  padding-bottom: 16px; /* 下線との間にパディング */
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  padding-bottom: 16px;
 }
 
-/* h2の下線スタイル */
 h2::after {
-  content: ''; /* 擬似要素として空のコンテンツを挿入 */
-  position: absolute; /* 親要素（h2）を基準に配置 */
-  bottom: 0; /* h2の下端に配置 */
-  left: 50%; /* 左端から50%の位置 */
-  transform: translateX(-50%); /* 自身の幅の半分だけ左に移動して中央寄せ */
-  width: 240px; /* 下線の幅 */
-  height: 4px; /* 下線の高さ */
-  background-color: var(--color-primary); /* 下線の色（メインカラー） */
-  border-radius: 2px; /* 下線の角を少し丸くする */
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
 }
 
-/* h3のフォントサイズ */
-h3 { font-size: 1.3rem; } /* h3のフォントサイズは既存の1.6remを維持 */
+h3 { font-size: 1.3rem; }
 
-/* p要素（段落）の基本スタイル */
 p {
-  margin: 0 0 1rem; /* 段落の下に1remの余白 */
+  margin: 0 0 1rem;
 }
 p:last-child {
-  margin-bottom: 0; /* 最後の段落は下余白なし */
+  margin-bottom: 0;
 }
 
-/* a要素（リンク）の基本スタイル */
 a {
-  color: var(--color-primary); /* リンクの色（メインカラー） */
-  text-decoration: none; /* 下線をなくす */
+  color: var(--color-primary);
+  text-decoration: none;
 }
 
-/* img要素（画像）の基本スタイル */
 img {
-  max-width: 100%; /* 親要素の幅を超えないようにする */
-  height: auto; /* 幅に合わせて高さを自動調整し、アスペクト比を維持 */
-  vertical-align: middle; /* インライン要素として配置された場合の垂直方向の配置 */
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
 }
 
 /* === 2. 各セクションのスタイル === */
 
 /* --- ヒーローセクション (ファーストビュー) --- */
 .hero {
-  text-align: center; /* ヒーローセクション全体を中央寄せ */
-  padding-top: 60px; /* 上部にパディング */
-  background-color: var(--color-bg-alt); /* 薄い背景色 */
+  text-align: center;
+  padding: 60px 0;
+  background-color: var(--color-bg-alt);
 }
 .hero-text h1 {
-  color: var(--color-primary); /* h1をメインカラーに */
-  margin-bottom: 16px; /* 下に余白 */
+  color: var(--color-primary);
+  margin-bottom: 16px;
 }
 .hero-text p {
-  color: var(--color-text); /* 濃いテキスト色で視認性確保 */
-  max-width: 500px; /* テキストの読みやすさを保つための最大幅 */
-  margin: 0 auto 40px; /* 中央寄せと下余白 */
-  font-weight: 500; /* 少し太めのフォント */
+  color: var(--color-text);
+  max-width: 500px;
+  margin: 0 auto 40px;
+  font-weight: 500;
 }
-/* ▼▼▼ hero-priceの変更点 - 画像に完全に合わせる ▼▼▼ */
 .hero-price {
-  /* 画像の背景グラデーションを再現 */
   background: linear-gradient(135deg, #4A44E4 0%, #5AC8FA 100%);
-  color: white; /* 全てのテキストを白に */
-  padding: 24px 40px; /* 内側の余白 */
-  border-radius: 12px; /* 画像に合わせた角丸 */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* 画像に合わせた影 */
-  border: none; /* ボーダーは画像にないためなし */
+  color: white;
+  padding: 24px 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  border: none;
   display: inline-block;
-  max-width: 280px; /* 画像に合わせた固定幅 */
-  min-width: 280px; /* 固定幅 */
+  max-width: 280px;
+  min-width: 280px;
   box-sizing: border-box;
-  text-align: center; /* 中央寄せ */
+  text-align: center;
+  margin-bottom: 2rem;
 }
 .hero-price-label {
-  font-weight: 700; /* 画像に合わせた太さ */
-  font-size: 1.6rem; /* 画像に合わせたサイズ */
-  margin-bottom: 5px; /* 下の数字との間隔 */
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 5px;
 }
 .hero-price-number {
-  /* ここは直接の子要素ではないので、このセレクタでは影響しない */
-  /* spanと「円」のスタイルを個別に指定 */
-  font-size: 1rem; /* 親のfont-sizeは小さく設定し、子で大きくする */
+  font-size: 1rem;
   font-weight: normal;
   line-height: 1;
   color: white;
-  display: flex; /* 数字と「円」をflexで並べる */
-  justify-content: center; /* 中央寄せ */
-  align-items: baseline; /* ベースラインを揃える */
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
 }
-.hero-price-number span { /* 「0」の数字のスタイル */
-  font-size: 5rem; /* 画像に合わせたサイズ */
-  font-weight: 900; /* 画像に合わせた太さ */
-  /* 画像に合わせた黒い縁取り */
+.hero-price-number span {
+  font-size: 5rem;
+  font-weight: 900;
   text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
-  line-height: 1; /* 行の高さ */
+  line-height: 1;
 }
-.hero-price-number { /* 「円」のスタイル */
-  /* hero-price-numberセレクタは、上記でflexboxの親として設定されているため、
-     その直下の「円」テキストに適用されるスタイルをここに記述する */
-  /* 現状のHTML `<p class="hero-price-number"><span>0</span>円</p>` では、
-     `hero-price-number`に指定したfont-sizeが「円」に、`span`に指定したfont-sizeが「0」に適用される */
-  font-size: 2.5rem; /* 画像に合わせた「円」のサイズ */
-  font-weight: 700; /* 画像に合わせた「円」の太さ */
-  margin-left: 5px; /* 数字と「円」の間隔 */
+p.hero-price-number { /* Specificity to override p styles */
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-left: 5px;
+  margin-bottom: 0;
 }
-/* ▲▲▲ hero-priceの変更点ここまで ▲▲▲ */
-
 
 /* --- 問題提起 & 解決策 --- */
 .problem-content, .solution-content {
-  display: flex; /* Flexboxレイアウト */
-  align-items: center; /* 垂直方向中央寄せ */
-  gap: 60px; /* 要素間の隙間 */
+  display: flex;
+  align-items: center;
+  gap: 60px;
 }
 .problem-text, .solution-text {
-  flex: 1; /* 残りのスペースを均等に占める */
-  text-align: left; /* テキストは左寄せを維持（自然な読み方のため） */
+  flex: 1;
+  text-align: left;
 }
 .problem-image, .solution-image {
-  flex: 1.2; /* 画像側のスペースを少し広くする */
-  text-align: center; /* 画像を中央寄せ */
+  flex: 1.2;
+  text-align: center;
 }
 .problem-image img, .solution-image img {
-  border-radius: var(--border-radius); /* 角丸 */
-  box-shadow: var(--shadow-medium); /* 影 */
-  width: 100%; /* 親要素の幅に合わせて100%に */
-  height: auto; /* 高さを自動調整し、アスペクト比を維持 */
-  object-fit: contain; /* 画像が歪まずにコンテナ内に収まるように */
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-medium);
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 .problem-text ul {
-  list-style: none; /* デフォルトのリストスタイルをなくす */
-  padding: 0; /* デフォルトパディングをリセット */
-  margin-bottom: 24px; /* 下に余白 */
+  list-style: none;
+  padding: 0;
+  margin-bottom: 24px;
 }
 .problem-text li {
-  padding-left: 28px; /* リストアイコンのための左パディング */
-  position: relative; /* ::before擬似要素の基準位置 */
-  margin-bottom: 12px; /* 各リスト項目の下余白 */
-  color: var(--color-text); /* 濃いテキスト色 */
-  font-weight: 500; /* 少し太めのフォント */
+  padding-left: 28px;
+  position: relative;
+  margin-bottom: 12px;
+  color: var(--color-text);
+  font-weight: 500;
 }
 .problem-text li::before {
-  content: '▶'; /* リストアイコン（右向き三角形） */
-  position: absolute; /* 親要素（li）を基準に配置 */
-  left: 0; /* 左端に配置 */
-  color: var(--color-accent); /* アクセントカラー */
-  font-weight: 700; /* 太めのフォント */
-  font-size: 1rem; /* アイコンのサイズ */
-  top: 4px; /* 垂直方向の位置調整 */
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 1rem;
+  top: 4px;
 }
 .speech-bubble {
-  border: 1px solid var(--color-border); /* 細いボーダー */
-  padding: 12px 18px; /* 内側の余白 */
-  border-radius: 8px; /* 角丸 */
-  margin-bottom: 12px; /* 下に余白 */
-  display: inline-block; /* インラインブロックでテキストにフィット */
-  background-color: var(--color-bg); /* 白い背景 */
-  color: var(--color-text); /* 濃いテキスト色 */
-  box-shadow: var(--shadow-light); /* 軽い影 */
+  border: 1px solid var(--color-border);
+  padding: 12px 18px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  display: inline-block;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  box-shadow: var(--shadow-light);
+  max-width: 300px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .solution-main-copy {
-  font-size: 1.9rem; /* フォントサイズ */
-  font-weight: 700; /* フォントの太さ */
-  margin-bottom: 24px; /* 下に余白 */
-  color: var(--color-text); /* 濃いテキスト色 */
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--color-text);
 }
 .solution-conclusion {
-  margin-top: 40px; /* 上に余白 */
-  font-size: 2.4rem; /* フォントサイズ */
-  font-weight: 900; /* 極太フォント */
-  color: var(--color-primary); /* メインカラー */
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* 軽い影 */
-  text-align: center; /* 中央寄せ */
+  margin-top: 40px;
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--color-primary);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
 /* --- サービス内容セクション --- */
 .services .container {
-  display: grid; /* グリッドレイアウト */
-  grid-template-columns: repeat(2, 1fr); /* 2列均等幅 */
-  gap: 30px; /* グリッドアイテム間の隙間 */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
 }
 .service-category {
-  background: var(--color-bg); /* 白い背景 */
-  padding: 32px; /* 内側の余白 */
-  border-radius: var(--border-radius); /* 角丸 */
-  box-shadow: var(--shadow-medium); /* 中程度の影 */
-  border: 1px solid var(--color-border); /* 細いボーダー */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* ホバーアニメーション */
+  background: var(--color-bg);
+  padding: 32px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-medium);
+  border: 1px solid var(--color-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 .service-category:hover {
-  transform: translateY(-10px); /* ホバーで上に浮き上がる */
-  box-shadow: 0 16px 40px rgba(61, 82, 213, 0.15); /* 影を強くする */
-  border-color: var(--color-primary); /* ホバーでボーダー色を変える */
+  transform: translateY(-10px);
+  box-shadow: 0 16px 40px rgba(61, 82, 213, 0.15);
+  border-color: var(--color-primary);
 }
 .service-category h3 {
-  color: var(--color-primary); /* メインカラー */
-  margin: 0 0 24px; /* 下に余白 */
-  padding-bottom: 12px; /* 下線との間にパディング */
-  border-bottom: 2px solid var(--color-primary); /* 太い下線 */
+  color: var(--color-primary);
+  margin: 0 0 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--color-primary);
 }
 .services ul {
-  list-style: none; /* リストスタイルをなくす */
-  padding: 0; /* パディングをリセット */
-  margin: 0; /* マージンをリセット */
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .services li {
-  padding-left: 32px; /* リストアイコンのための左パディング */
-  position: relative; /* ::before擬似要素の基準位置 */
-  margin-bottom: 16px; /* 各リスト項目の下余白 */
-  color: var(--color-text); /* 濃いテキスト色 */
-  font-weight: 500; /* 少し太めのフォント */
+  padding-left: 32px;
+  position: relative;
+  margin-bottom: 16px;
+  color: var(--color-text);
+  font-weight: 500;
 }
 .services li::before {
-  content: '✔'; /* リストアイコン（チェックマーク） */
-  position: absolute; /* 親要素（li）を基準に配置 */
-  left: 0; /* 左端に配置 */
-  color: var(--color-accent); /* アクセントカラー */
-  font-size: 1.3rem; /* アイコンのサイズ */
-  font-weight: 700; /* 太めのフォント */
-  top: 0px; /* 垂直方向の位置調整 */
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-size: 1.3rem;
+  font-weight: 700;
+  top: 0px;
 }
 
 /* --- 料金プラン & 初期費用セクション --- */
 .pricing {
-  text-align: center; /* 料金プランセクション全体を中央寄せ */
+  text-align: center;
 }
-
-/* ▼▼▼「初期費用 0円」の強調デザイン - hero-priceと完全に合わせる ▼▼▼ */
 .initial-fee {
   background: linear-gradient(135deg, #4A44E4 0%, #5AC8FA 100%);
-  color: white; /* 親要素のテキスト色を白に統一（「初期費用」の部分） */
-  padding: 24px 40px; /* hero-priceと全く同じ内側の余白 */
-  margin: 0 auto 60px; /* hero-priceに合わせて、上の-40pxマージンを0にする。下は60px */
-  max-width: 280px; /* hero-priceと全く同じ固定幅 */
-  min-width: 280px; /* hero-priceと全く同じ固定幅 */
-  border-radius: 12px; /* hero-priceと全く同じ角丸 */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* hero-priceと全く同じ影 */
-  border: none; /* ボーダーはなし */
-  text-align: center; /* 中央寄せ */
-  font-weight: 700; /* hero-priceのラベルと同じ太さ */
-  font-size: 1.6rem; /* hero-priceのラベルと同じサイズ */
-  line-height: 1.4; /* 行の高さ */
+  color: white;
+  padding: 24px 40px;
+  margin: 0 auto 60px;
+  max-width: 280px;
+  min-width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  border: none;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1;
   position: relative;
   z-index: 2;
 }
 .initial-fee::after {
-  content: '0円'; /* 「0円」のテキスト */
-  display: block; /* ブロック要素として表示し、改行させる */
-  font-size: 5rem; /* hero-priceの数字と同じサイズ */
-  font-weight: 900; /* hero-priceの数字と同じ太さ */
-  color: white; /* 白に統一 */
-  /* hero-priceの数字と全く同じ黒い縁取り */
+  content: '0円';
+  display: block;
+  font-size: 5rem;
+  font-weight: 900;
+  color: white;
   text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
-  margin-top: 5px; /* 上のラベルとの間隔 */
-  line-height: 1; /* 行の高さ */
+  margin-top: 5px;
+  line-height: 1;
 }
-/* ▲▲▲ initial-feeの変更点ここまで ▲▲▲ */
-
-
 .pricing h2 {
-  margin-bottom: 16px; /* 下に余白 */
+  margin-bottom: 16px;
 }
 .plan-cards {
-  display: flex; /* Flexboxレイアウト */
-  justify-content: center; /* 中央寄せ */
-  gap: 30px; /* 要素間の隙間 */
-  margin-top: 40px; /* 上に余白 */
-  margin-bottom: 40px; /* 下に余白 */
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 .plan-card {
-  background: var(--color-bg); /* 白い背景 */
-  border: 1px solid var(--color-border); /* 細いボーダー */
-  padding: 32px; /* 内側の余白 */
-  border-radius: var(--border-radius); /* 角丸 */
-  box-shadow: var(--shadow-light); /* 軽い影 */
-  flex: 1; /* 残りのスペースを均等に占める */
-  max-width: 320px; /* カードの最大幅 */
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* ホバーアニメーション */
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  padding: 32px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  flex: 1;
+  max-width: 320px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .plan-card:hover {
-  transform: translateY(-10px); /* ホバーで上に浮き上がる */
-  border-color: var(--color-primary); /* ホバーでボーダー色を変える */
-  box-shadow: var(--shadow-medium); /* 影を強くする */
+  transform: translateY(-10px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-medium);
 }
 .plan-details h3 {
-  margin: 0 0 8px; /* 下に余白 */
-  font-size: 1.6rem; /* フォントサイズ */
-  color: var(--color-primary); /* メインカラー */
+  margin: 0 0 8px;
+  font-size: 1.6rem;
+  color: var(--color-primary);
 }
 .price {
-  font-size: 2.8rem; /* フォントサイズ */
-  font-weight: 900; /* 極太フォント */
-  line-height: 1; /* 行の高さ */
-  color: var(--color-text); /* 濃いテキスト色 */
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--color-text);
 }
 .price span {
-  font-size: 1.1rem; /* フォントサイズ */
-  font-weight: 500; /* フォントの太さ */
-  color: var(--color-text-light); /* 読みやすい色 */
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-text-light);
 }
 .pricing-notes {
-  max-width: 650px; /* 最大幅 */
-  margin: 0 auto; /* 中央寄せ */
-  color: var(--color-text-light); /* 読みやすい色 */
-  font-weight: 500; /* フォントの太さ */
-  line-height: 1.6; /* 行の高さ */
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--color-text-light);
+  font-weight: 500;
+  line-height: 1.6;
 }
 .note-red {
-  color: #e74c3c; /* 赤色 */
-  font-weight: 700; /* 太字 */
+  color: #e74c3c;
+  font-weight: 700;
+}
+.pricing-period-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.3em;
+}
+.pricing-period-options {
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+  margin-bottom: 1em;
+}
+.pricing-period-options span {
+  font-size: 2.4rem;
+  font-weight: 900;
 }
 
-/* ▼▼▼ FAQセクションのスタイル追加 ▼▼▼ */
+/* --- FAQセクション --- */
 #faq {
-  background-color: var(--color-bg); /* 白い背景 */
+  background-color: var(--color-bg);
 }
-
 .faq-list {
-  max-width: 800px; /* FAQリストの最大幅 */
-  margin: 0 auto; /* 中央寄せ */
+  max-width: 800px;
+  margin: 0 auto;
   padding: 0;
-  list-style: none; /* リストスタイルをなくす */
+  list-style: none;
 }
-
 .faq-list dt {
-  background-color: var(--color-bg-alt); /* 質問の背景色 */
-  padding: 20px 25px; /* 内側の余白 */
-  margin-bottom: 10px; /* 質問と次の項目との間隔 */
-  border-radius: var(--border-radius); /* 角丸 */
-  font-weight: 700; /* 質問を太字に */
-  font-size: 1.1rem; /* フォントサイズ */
-  color: var(--color-text); /* 濃いテキスト色 */
-  cursor: pointer; /* クリック可能であることを示すカーソル */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* ホバーアニメーション */
-  position: relative; /* Qアイコンの配置基準 */
-  text-align: left; /* 左寄せ */
-  box-shadow: var(--shadow-light); /* 軽い影 */
-  border: 1px solid var(--color-border); /* 細いボーダー */
+  background-color: var(--color-bg-alt);
+  padding: 20px 25px;
+  margin-bottom: 10px;
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  text-align: left;
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--color-border);
 }
-
 .faq-list dt::before {
-  content: 'Q'; /* Qアイコン */
+  content: 'Q';
   display: inline-block;
   font-weight: 900;
-  color: var(--color-primary); /* Qの色 */
-  margin-right: 10px; /* Qとテキストの間隔 */
+  color: var(--color-primary);
+  margin-right: 10px;
 }
-
 .faq-list dt:hover {
-  background-color: #EBF2F7; /* ホバー時の背景色 */
-  box-shadow: var(--shadow-medium); /* ホバーで影を強くする */
+  background-color: #EBF2F7;
+  box-shadow: var(--shadow-medium);
 }
-
 .faq-list dd {
-  background-color: var(--color-bg); /* 回答の背景色 */
-  padding: 15px 25px 20px 25px; /* 内側の余白 */
-  margin: -10px 0 20px 0; /* dtとddの重なりと下余白 */
-  border-radius: var(--border-radius); /* 角丸 */
-  box-shadow: var(--shadow-light); /* 軽い影 */
-  border: 1px solid var(--color-border); /* 細いボーダー */
-  font-size: 1rem; /* フォントサイズ */
-  color: var(--color-text); /* 回答も濃いテキスト色に（視認性確保） */
-  line-height: 1.6; /* 行の高さ */
-  text-align: left; /* 左寄せ */
+  background-color: var(--color-bg);
+  padding: 15px 25px 20px 25px;
+  margin: -10px 0 20px 0;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--color-border);
+  border-top: none;
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  text-align: left;
 }
-
 .faq-list dd::before {
-  content: 'A'; /* Aアイコン */
+  content: 'A';
   display: inline-block;
   font-weight: 900;
-  color: var(--color-accent); /* Aの色 */
-  margin-right: 10px; /* Aとテキストの間隔 */
+  color: var(--color-accent);
+  margin-right: 10px;
 }
-/* ▲▲▲ FAQセクションのスタイル追加ここまで ▲▲▲ */
-
 
 /* --- CTA & プロフィールセクション --- */
 .cta {
   background-color: var(--color-primary);
 }
-
-/* CTAメッセージカード（「この流れに乗らないのは〜」のボックス） */
 .cta .cta-message {
   background-color: var(--color-bg);
   padding: 32px;
@@ -495,8 +459,6 @@ img {
 .cta .cta-message .cta-message-text:last-child {
     margin-bottom: 0;
 }
-
-/* 「Googleだけ！SNSだけ！」のボックス */
 .cta-box {
   background-color: var(--color-bg);
   padding: 32px;
@@ -515,8 +477,6 @@ img {
   color: var(--color-primary);
   font-weight: 700;
 }
-
-/* プロフィールカード（最下部のお問い合わせカード） */
 .profile-contact-card {
   background-color: var(--color-bg);
   border-radius: var(--border-radius);
@@ -537,11 +497,6 @@ img {
   margin-bottom: 24px;
   font-weight: 700;
 }
-.profile-info {
-    margin-bottom: 24px;
-    color: var(--color-text);
-    font-weight: 500;
-}
 .profile-info p {
     color: var(--color-text);
     font-weight: 500;
@@ -550,9 +505,6 @@ img {
   font-weight: 900;
   margin-bottom: 32px;
   color: var(--color-accent);
-}
-.profile-cta-text svg {
-  fill: var(--color-accent);
 }
 .profile-icons-grid {
   display: flex;
@@ -577,8 +529,6 @@ img {
   width: 64px;
   height: 64px;
   margin-bottom: 12px;
-  max-width: 100%;
-  height: auto;
   object-fit: contain;
 }
 .icon-label {
@@ -586,6 +536,9 @@ img {
     color: var(--color-text);
     font-weight: 500;
     line-height: 1.5;
+}
+.center-text {
+  text-align: center;
 }
 
 /* --- フッター --- */
@@ -599,25 +552,22 @@ footer {
 }
 footer p { margin: 0; }
 
-/* === 3. レスポンシブ対応 (最大画面幅768pxまで) === */
+/* === 3. レスポンシブ対応 === */
 @media (max-width: 768px) {
-  h1 { font-size: 2.2rem; }
+  h1 { font-size: 2rem; }
   h2 { font-size: 1.6rem; }
   section { padding: 80px 0; }
 
-  /* hero-priceのレスポンシブ調整 */
   .hero-price {
     max-width: 240px;
     min-width: 240px;
     padding: 20px 30px;
   }
   .hero-price-label { font-size: 1.4rem; }
-  .hero-price-number { font-size: 1rem; }
+  p.hero-price-number { font-size: 1rem; }
   .hero-price-number span { font-size: 4rem; }
-  .hero-price-number { font-size: 2rem; }
+  p.hero-price-number { font-size: 2rem; }
 
-
-  /* 問題提起・解決策セクションのレイアウト変更 */
   .problem-content, .solution-content {
     flex-direction: column;
     gap: 40px;
@@ -635,18 +585,12 @@ footer p { margin: 0; }
     margin-right: auto;
     max-width: 90%;
   }
-  .speech-bubble {
-      margin-left: auto;
-      margin-right: auto;
-  }
   
-  /* サービス内容セクションのレイアウト変更 */
   .services .container {
     grid-template-columns: 1fr;
     gap: 24px;
   }
   
-  /* initial-feeのレスポンシブ調整 */
   .initial-fee {
     max-width: 240px;
     min-width: 240px;
@@ -655,34 +599,27 @@ footer p { margin: 0; }
   }
   .initial-fee::after { font-size: 4rem; }
   
-  /* 料金プランカードのレイアウト変更 */
   .plan-cards {
     flex-direction: column;
     align-items: center;
     gap: 24px;
   }
 
-  /* FAQセクションのレスポンシブ調整 */
   .faq-list dt, .faq-list dd {
-    padding: 15px 20px; /* スマホでのパディング調整 */
-    font-size: 0.95rem; /* スマホでのフォントサイズ調整 */
+    padding: 15px 20px;
+    font-size: 0.95rem;
   }
   .faq-list dt::before, .faq-list dd::before {
-    font-size: 0.9rem; /* Q/Aアイコンのサイズ調整 */
+    font-size: 0.9rem;
   }
 
-
-  /* プロフィールカードのレスポンシブ調整 */
   .profile-contact-card { padding: 32px 24px; }
   .profile-icon-link { flex-basis: calc(50% - 20px); }
   .social-icon {
     width: 50px;
     height: 50px;
   }
-}
-
-/* サービス内容の重要！マークをスマホで表示（PCでは非表示） */
-@media (max-width: 768px) {
+  
   .services .important {
     display: inline-block;
     background-color: var(--color-accent);
@@ -694,36 +631,23 @@ footer p { margin: 0; }
     margin-left: 8px;
   }
 }
-/* style.css の .hero-price 定義の下あたりに追加 */
-.hero-price {
-  /* 既存のスタイルはそのままに */
-  margin-bottom: 2rem;  /* ← カード直下に余白を足す */
-}
-.center-text {
-  text-align: center;
-}
-.speech-bubble {
-  max-width: 300px;   /* 好みのサイズに調整（例：350px） */
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  /* 既存のpadding, border, background などはそのまま */
-}
-.pricing-period-title {
-  font-size: 1.6rem;    /* タイトル（契約期間）を大きく */
-  font-weight: 700;
-  color: var(--color-primary);  /* 必要に応じて色も指定 */
-  margin-bottom: 0.3em;
+
+/* === 5. スクロールアニメーション設定（追記） === */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px); /* 少し下に配置 */
+  transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.pricing-period-options {
-  font-size: 1.8rem;    /* 「6ヶ月 or 1年」の部分をさらに大きく */
-  font-weight: 900;
-  letter-spacing: 0.04em;
-  color: var(--color-text);
-  margin-bottom: 1em;   /* 下に余白（必要に応じて調整） */
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
-.pricing-period-options span {
-  font-size: 2.4rem;    /* 数字部分だけさらに大きく */
-  font-weight: 900;
-}
+
+.scroll-reveal.delay-1 { transition-delay: 0.1s; }
+.scroll-reveal.delay-2 { transition-delay: 0.2s; }
+.scroll-reveal.delay-3 { transition-delay: 0.3s; }
+.scroll-reveal.delay-4 { transition-delay: 0.4s; }
+.scroll-reveal.delay-5 { transition-delay: 0.5s; }
+.scroll-reveal.delay-6 { transition-delay: 0.6s; }
