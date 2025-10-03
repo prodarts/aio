@@ -749,3 +749,45 @@ footer p { margin: 0; }
 .scroll-reveal.delay-4 { transition-delay: 0.4s; }
 .scroll-reveal.delay-5 { transition-delay: 0.5s; }
 .scroll-reveal.delay-6 { transition-delay: 0.6s; }
+
+
+/* =================================== */
+/*  料金表示の特別価格スタイル (追記)   */
+/* =================================== */
+.plan-card .price {
+  display: flex; /* 横並びにする */
+  flex-wrap: wrap; /* 小画面で折り返すように */
+  justify-content: center; /* 中央揃え */
+  align-items: baseline; /* テキストのベースラインを揃える */
+  gap: 8px; /* 要素間のスペース */
+  min-height: 4rem; /* 高さを確保してレイアウト崩れを防ぐ */
+}
+
+/* 元の価格 */
+.price .original-price {
+  font-size: 1.8rem; /* 少し小さめに */
+  font-weight: 700;
+  color: #999; /* グレーアウト */
+  line-height: 1;
+}
+
+.price .original-price del {
+  text-decoration-thickness: 2px; /* 打ち消し線の太さ */
+  text-decoration-color: #e74c3c; /* 打ち消し線の色を赤に */
+}
+
+/* キャンペーン価格 */
+.price .campaign-price {
+  font-size: 3.2rem; /* 元の価格より大きく、目立たせる */
+  font-weight: 900;
+  color: #e74c3c; /* 強い赤色で強調 */
+  line-height: 1;
+}
+
+/* 単位（円/税込） */
+.price .price-unit {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+  padding-left: 4px; /* 新しい価格との間に少しスペース */
+}
